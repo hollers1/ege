@@ -1086,7 +1086,7 @@ net = ip_network("192.168.32.160/255.255.255.240", 0)
 
 for add in range(33):
     swag=ip_network("192.168.32.160/"+str(add))
-    if bin(swag)[2:].count('1') == 2'''
+    if bin(swag)[2:].count('1') == 2
 
 from itertools import *
 alf='0123456789AAAAA'
@@ -1095,3 +1095,41 @@ for i in product(alf, repeat=8):
     #if (i[0] != '0' and i.count('0') == 2 and i.count('A') <= 4):
     print(i)
 
+def f(n):
+    if n <3: return n
+    if n >=3: return (n-1)*f(n-2)
+print((f(2025)-f(2023))/f(2021))
+
+for a in range(1,100):
+    f=True
+    for x in range(1,100):
+        for y in range(1,100):
+            for z in range(1,100):
+                if not((80!=5*y+2*x+4*z) or (a<6*x) or (a<y) or (a<3*z)):
+                    f=False
+    if f:
+        print(a)
+
+for a in range(1,200):
+    f=True
+    for x in range(1,200):
+        if not((x % a == 0) and (a<10) or (x % 44 !=0) and (x % 99 !=0) and (a<10)):
+            f=False
+    if f:
+        print(a)
+
+a = set()
+p = {1,2,3,4,5,6}
+d = {3,5,15}
+for x in range(100):
+    if not((not(x in a)) <= ((not(x in p)) and (x in d)) or not(x in d)):
+        a.add(x)
+print(a)'''
+
+from ipaddress import *
+net = ip_network(f'172.16.168.0/255.255.248.0', 0)
+k=0
+for ip_add in net:
+    if bin(int(ip_add)).count('1')%5!=0:
+        k+=1
+print(k)
