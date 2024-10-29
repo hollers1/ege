@@ -1124,12 +1124,39 @@ d = {3,5,15}
 for x in range(100):
     if not((not(x in a)) <= ((not(x in p)) and (x in d)) or not(x in d)):
         a.add(x)
-print(a)'''
+print(a)
 
 from ipaddress import *
 net = ip_network(f'172.16.168.0/255.255.248.0', 0)
 k=0
 for ip_add in net:
     if bin(int(ip_add)).count('1')%5!=0:
+        k+=1
+print(k)
+from itertools import *
+k=0
+alf = '01a'
+for s in product(alf,repeat=8):
+    if s[0]!='0' and s.count('0')==2 and s.count('a')<=4:
+        k+=5**s.count('a')*9**s.count('1')
+print(k)
+
+for n in range(1,100):
+    s='1'*n
+    while '111' in s:
+        s=s.replace('111','2',1)
+        s=s.replace('222','11',1)
+        s=s.replace('1','2',1)
+    if s.count('1') == 0:
+        print(s,n)'''
+st=123_456_794
+fn=678_901_234
+k=0
+for x in range(st//16,fn//16+1):
+    if st<=16*x<=fn:
+        k+=1
+    if st<=16*x+10<=fn:
+        k+=1
+    if st<=16*x+9<=fn:
         k+=1
 print(k)
