@@ -1149,6 +1149,7 @@ for n in range(1,100):
         s=s.replace('1','2',1)
     if s.count('1') == 0:
         print(s,n)'''
+'''
 st=123_456_794
 fn=678_901_234
 k=0
@@ -1160,3 +1161,251 @@ for x in range(st//16,fn//16+1):
     if st<=16*x+9<=fn:
         k+=1
 print(k)
+''''''
+from functools import *
+@lru_cache(None)
+def f(n):
+    if n == 1: return 1
+    return f(n-1)+3*g(n-1)
+def g(n):
+    if n==1: return 1
+    return f(n-1)-2*g(n-1)
+print(sum(map(int,str(f(50)))))'''
+'''
+k=0
+def f(n):
+    if n <= 3: return n
+    if n % 2 == 0 : return n + f(n-1)
+    if n % 2 !=0: return n*n + f(n-2)
+
+for i in range(1,2000):
+    if f(i) < 10**8:
+        k+=1
+print(k)
+#842
+''''''
+k=0
+def f(n):
+    if n > 20: return n*n*n+n
+    if n % 2 == 0: return 3 * f(n+1) + f(n+3)
+    if n % 2 != 0: return f(n+2)+ 2 * f(n+3)
+
+for i in range(1,1001):
+    if str(f(i)).count('1') == 0:
+        k+=1
+print(k)
+#384
+''''''
+def f(n):
+    if n > 30: return n*n + 3* n + 5
+    if n % 2 == 0: return 2* f(n+1) + f(n+4)
+    if n % 2 != 0: return f(n+2) + 3*f(n+5)
+
+k = 0
+for i in range(1, 1001):
+    if str(f(i)).count('0') >= 2:
+        k+=1
+print(k)
+#77
+''''''
+k=0
+def f(n):
+    if n > 30: return n*n+5*n+4
+    if n % 2 == 0: return f(n+1)+ 3*f(n+4)
+    if n % 2 != 0: return 2*f(n+2) + f(n+5)
+
+for i in range(1,1001):
+    if sum(map(int, str(f(i)))) == 27:
+        k+=1
+print(k)
+#137
+''''''
+def f(n):
+    if n == 0: return 5
+    if n > 0: return 3*f(n-4)
+    if n < 0: return f(n+3)
+print(f(43))
+#7971615
+''''''
+from functools import *
+@lru_cache(None)
+def f(n):
+    if n <=1: return n
+    if n % 2 == 0: return 1 + f(n//2)
+    if n % 2 !=0: return 0
+for i in range(1,101000):
+    if f(i) == 16:
+        print(i)
+''''''
+def f(n):
+    if n <=5: return n
+    if n % 3 == 0: return n + f(n//3+2)
+    return -98977967967
+for i in range(1,1000):
+    if f(i) > 1000:
+        print(i)
+        break''''''
+from turtle import *
+k=10
+lt(90)
+speed(20)
+tracer(20)
+down()
+for _ in range(2):
+    fd(15*k)
+    lt(90)
+    fd(20*k)
+    lt(90)
+up()
+rt(90)
+bk(7*k)
+lt(90)
+fd(9*k)
+down()
+for _ in range(2):
+    fd(17*k)
+    rt(90)
+    fd(15*k)
+    rt(90)
+up()
+for x in range(-25,50):
+    for y in range(-25,50):
+        goto(x*k,y*k)
+        dot(3.5,'red')''''''
+for i in range(1,100000):
+    s = ''
+    n=''
+    c = i
+    ost = (c % 4)*2
+    ostc = ost
+    while ost !=0:
+            s+=str(ost % 4)
+            ost = ost // 4
+    s = s[::-1]
+    while c !=0:
+        n+=str(c % 4)
+        c = c // 4
+    n=n[::-1]   
+    if ostc == 0:
+        n = n + n[-2:]
+    else:        
+        n = n + s
+    if int(n,4) < 369:
+        print(i)'''
+'''     
+for i in range(1,100):
+    co = i
+    n =''
+    while i !=0:
+        n+=str(i % 4)
+        i = i // 4
+            
+    print(co,n)''''''
+from itertools import *
+alp = 'аеиклпр'
+k = 0
+s = 1
+for i in product(alp, repeat=6):
+    if (s % 2 == 0) and (i[0] != 'к') and (i.count('и') >= 2):   
+        k+=1
+    s+=1
+print(k)'''
+'''
+from ipaddress import *
+net = ip_network('116.29.170.89/255.255.255.224', 0)
+k=0
+for add in net:
+    print(bin(int(add)))
+    print(bin(int(add))[17:])
+    print(bin(int(add))[:17])
+    if bin(int(add))[:1].count('1') <= bin(int(add))[17:].count('1'):
+        k+=1
+print(k)''''''
+def f(st,fn):
+    if st==fn: return 1
+    if st > fn or st==17: return 0
+    return f(st+1,fn)+ f(st*2,fn)
+print(f(1,10)*f(10,35))''''''
+from ipaddress import *
+net = ip_network('116.29.170.89/255.255.255.224', 0)
+k=0
+for add in net:
+    print(bin(int(add)))
+    print(bin(int(add))[17:])
+    print(bin(int(add))[:17])
+    if bin(int(add))[:1].count('1') <= bin(int(add))[17:].count('1'):
+        k+=1''''''
+def f(st,fn):
+    if st==fn: return 1
+    if st>fn: return 0
+    return (f(st+1,fn) + f(st*3,fn))
+print(f(2,28)*f(28,90))''''''
+def f(st,fn,k):
+    if st == fn: return 1
+    if st> fn: return 0
+    if k == 0: return (f(st+1,fn,0) + f(st+2,fn,0) + f(st*2, fn, 2))
+    if k == 2: return (f(st+1,fn,0) + f(st+2,fn,0))
+print(f(1,11,0))''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st> fn: return 0
+    if k < 2: return f(st+1,fn,k)+f(st*2,fn,k+1)
+    if k >= 2: return f(st+1,fn,k)
+print(f(1,11,0))''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st> fn: return 0
+    return f(st+1,fn,k) + f(int(str(st)+'1'),fn,k)
+print(f(1,333,0))''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st> fn: return 0
+    return f(st+1,fn,k) + f(st+3,fn,k) + f(st+st-1,fn,k) 
+print(f(2,10,0))''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st < fn: return 0
+    return f(st-1,fn,k) + f(st-3,fn,k) + f(st//3,fn,k) 
+print(f(22,2,0))''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st > fn: return 0
+    return f(st+1,fn,k) + f(st*2,fn,k) + f(st*2+1,fn,k) 
+print(f(int('101',2),int('101110',2),0))
+#print(bin(23)[2:])''''''
+k=0
+def f(n):
+    if n == 0: return 0
+    if n > 0 and n % 2 == 0: return f(n//2)
+    if n>0 and n % 2 !=0: return 1+f(n-1)
+for i in range(1,901):
+    if f(i) == 9:
+        k+=1
+print(k)''''''
+
+def f(st,fn):
+    if st==fn: return 1
+    if st > fn: return 0
+    if st == 17: return 0
+    return (f(st+2,fn) + (f(st+3, fn)) + (f(st*2, fn)))
+print(f(3,10)*f(10,25))
+''''''
+def f(st,fn):
+    if st==fn: return 1
+    if st < fn: return 0
+    return f(st-1,fn) + f(st//3, fn)
+print(f(30,8)*f(8,1))
+''''''
+def f(st,fn):
+    if st==fn: return 1
+    if st < fn: return 0
+    return f(st-2,fn) + f(st//2, fn)
+print(f(32,8)*f(8,1))''''''
+
+from ipaddress import *
+net = ip_network('112.160.0.0/255.240.0.0', 0)
+k=0
+for add in net:
+    if bin(int(add)).count('1') % 5 == 0:
+        k+=1
+print(k)'''
