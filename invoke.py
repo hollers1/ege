@@ -612,15 +612,8 @@ print('19)', [s for s in range(1,62) if f(s,2)])
 print('20)', [s for s in range(1,62) if not f(s,1) and f(s,3)])
 print('21)', [s for s in range(1,62) if not f(s,2) and f(s,4)])
 
-def f(s1,s2,m):
-    if (s1+s2)>=53: return m%2==0
-    if m==0: return 0
-    h=[f(s1+1, s2, m-1), f(s1*2,s2,m-1), f(s1,s2+1,m-1), f(s1,s2*2,m-1)]
-    return any(h) if (m-1)%2==0 else all(h)
 
-#print('19)', [s2 for s2 in range(1,48) if f(5,s2,2)])
-print('20)', [s2 for s2 in range(1,48) if not f(5,s2,1) and f(5,s2,3)])
-print('21)', [s2 for s2 in range(1,48) if not f(5,s2,2) and f(5,s2,4)])
+
 
 def f(s1,s2,m):
     if (s1+s2) >= 231: return m%2==0
@@ -1408,4 +1401,821 @@ k=0
 for add in net:
     if bin(int(add)).count('1') % 5 == 0:
         k+=1
+print(k)''''''
+from ipaddress import *
+k = 0
+net = ip_network('172.16.128.0/255.255.192.0',0)
+for add in net:
+    if bin(int(add)).count('1')%2!=0:
+       k+=1
+print(k)
+''''''
+from ipaddress import *
+k=0
+net = ip_network('172.16.128.0/255.255.192.0',0)
+for add in net:
+    if bin(int(add)).count('1') % 2 != 0:
+        k+=1
+print(k)''''''
+from ipaddress import *
+k=0
+net = ip_network('112.160.0.0/255.240.0.0',0)
+for add in net:
+    if bin(int(add)).count('1') % 3 != 0:
+        k+=1
+print(k)''''''
+from ipaddress import *
+k=0
+net = ip_network('112.160.0.0/255.240.0.0', 0)
+for i in net:
+    if bin(int(i)).count('1') % 5 !=0:
+        k+=1
+print(k)''''''
+from ipaddress import *
+k=0
+net = ip_network('115.198.0.0/255.254.0.0',0)
+for i in net:
+    if bin(int(i)).count('1') % 5 == 0:
+        k+=1
+print(k)''''''
+from ipaddress import *
+k=0
+net = ip_network('112.160.0.0/255.240.0.0', 0)
+for i in net:
+    if bin(int(i)).count('1') % 5 ==0:
+        k+=1
+print(k)''''''
+s='8'*65
+while '222' in s or '888' in s:
+    if '222' in s:
+        s=s.replace('222','8',1)
+    else:
+        s=s.replace('888','2',1)
+print(s)''''''
+s='4'+'5'*90
+while '25' in s or '355' in s or '4555' in s:
+    if '25' in s:
+        s = s.replace('25','3',1)
+    if '355' in s:
+        s = s.replace('355','4',1)
+    if '4555' in s:
+        s = s.replace('4555','2',1)
+print(s)''''''
+s = '1'+ '0'* 75
+while '10' in s or '1' in s:
+    if '10' in s:
+        s=s.replace('10','001',1)
+    else: 
+        s=s.replace('1','00',1)
+print(s.count('0'))''''''
+s = '5'*200
+while '555' in s or '333' in s:
+    if '555' in s:
+        s=s.replace('555','3',1)
+    else:
+        s=s.replace('333','5',1)
+print(sum(map(int,s)))''''''
+s = '5'*400
+k=0
+while '555' in s or '333' in s:
+    if '555' in s:
+        s=s.replace('555','3',1)
+    else:
+        s=s.replace('333','5',1)
+        k+=3
+print(k)''''''
+s = '8'*100
+while '888' in s or '77' in s:
+    if '888' in s:
+        s=s.replace('888','8777',1)
+    else:
+        s=s.replace('77','8',1)
+print(s.count('8'),s.count('7'))''''''
+for i in range(61,300):
+    s = '1'*i
+    while '111' in s:
+            s=s.replace('111','2',1)
+            s=s.replace('222','1',1)
+    if s == '221':
+        print(i)
+        break''''''
+k=0
+for i in range(1,101):
+    s = '1'*i
+    while '111' in s:
+            s=s.replace('111','2',1)
+            s=s.replace('222','3',1)
+            s=s.replace('333','1',1)
+    if s == '321':
+        k+=1
+print(k)''''''
+f =open('17-1.txt')
+a = [int(x) for x in f]
+k=0
+smin=1000000000000000
+for i in range(len(a)-1):
+    if(a[i] % 7 ==0 and a[i+1]%17 !=0) or (a[i+1]%7==0 and a[i]%17!=0):
+        k+=1
+        smin=min(smin,a[i]+a[i+1])
+print(k,smin)''''''
+f = open('17-1.txt')
+a = [int(x) for x in f]
+k=0
+smin= 45788429785498754789
+for i in range(len(a)-1):
+    if (abs(a[i]) % 10 == 6 and  a[i] % 3 == 0) or (abs(a[i+1]) % 10 == 6 and  a[i+1] % 3 == 0):
+        k+=1
+        smin = min(smin,a[i],a[i+1])
+print(k,smin)''''''
+s = '9'*100
+while '33333' in s or '999' in s:
+    if '33333' in s:
+        s = s.replace('33333', '99',1)
+    else:
+        s = s.replace('999', '3',1)
+print(s)''''''
+for i in range(3, 10001):
+    s = '5'+'2'*i
+    while '72' in s or '522' in s or '2222' in s:
+        if '72' in s:
+            s = s.replace('72', '2',1)
+        if '522' in s:
+            s = s.replace('522', '27',1)
+        if '2222' in s:
+            s = s.replace('2222', '5',1)
+    if sum(map(int,s)) == 63:
+        print(i)
+        break''''''
+s = '9'*136
+while '22222' in s or '9999' in s:
+    if '22222' in s:
+        s = s.replace('22222', '99',1)
+    else:
+        s = s.replace('9999', '2',1)
+print(s)''''''
+for i in range(3, 10001):
+    s = '1'+'8'*i
+    while '18' in s or '388' in s or '888' in s:
+        if '18' in s:
+            s = s.replace('18', '8',1)
+        if '388' in s:
+            s = s.replace('388', '81',1)
+        if '888' in s:
+            s = s.replace('888', '3',1)
+    if s.count('1') == 3:
+        print(i)
+        break''''''
+mmax = -11231341244
+for i in range(3, 10001):
+    s = '1'+'2'*i
+    while '12' in s or '322' in s or '222' in s:
+        if '12' in s:
+            s = s.replace('12', '2',1)
+        if '322' in s:
+            s = s.replace('322', '21',1)
+        if '222' in s:
+            s = s.replace('222', '3',1)
+    mmax = max(mmax,sum(map(int,s)))
+print(mmax)''''''
+s = '8'*83
+while '111' in s or '88888' in s:
+    if '111' in s:
+        s = s.replace('111', '88',1)
+    else:
+        s = s.replace('88888', '8',1)
+print(s)''''''
+print('x y z w')
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            for w in range(2):
+                if not((not(x <= y )) or ((not(w)) <= (not(z))) or w):
+                    print(x,y,z,w)''''''
+def f(n):
+    s = ''
+    while n !=0:
+        s += str(n % 4)
+        n = n // 4
+    s = s[::-1]
+    return s
+for i in range(1,100):
+    
+    st = ''
+    n = i
+    ost = (n % 4)*2
+    if n % 4 == 0:
+        st = f(n) + f(n)[:2]
+    else:
+        st = f(n) + f(ost)
+    if int(st,4) >=1025:
+        print(i, int(st,4))
+        break''''''
+from turtle import *
+k = 15
+speed(5)
+tracer(5)
+lt(90)
+for _ in range(3):
+    down()
+    for _ in range(2):
+        fd(10*k)
+        rt(90)
+        fd(10*k)
+        rt(90)
+    up()
+    fd(5*k)
+    rt(90)
+    fd(5*k)
+    lt(90)
+
+for x in range(50):
+    for y in range(50):
+        goto(x*k,y*k)
+        dot(3.5,'red')''''''
+from itertools import *
+k=1
+coun = 0
+alp = 'АГИЛМНОФ'
+for i in product(alp, repeat = 5):
+    if k % 2 != 0 and i[0] != 'Н' and i.count('О') <= 1:
+        coun +=1
+    k += 1
+print(coun)''''''
+for i in range(3,10001):
+    s = '4'+'1'*i
+    while '31' in s or '411' in s or '1111' in s:
+        if '31' in s:
+            s = s.replace('31','1',1)
+        if '411' in s:
+            s = s.replace('411','13',1)
+        if '1111' in s:
+            s = s.replace('1111','4',1)
+    if sum(map(int,s)) == 36:
+        print(i,s)
+        break''''''
+from ipaddress import *
+net = ip_network('23.140.159.160/255.255.252.0',0)
+k = 0
+for add in net:
+    add = bin(int(add))[2:].zfill(32)
+
+
+    if add[:16].count('1') >= add[16:].count('1'):
+        k+=1
+print(k)''''''
+for x in range(1,24):
+    arr1 = 1 * 25**8 + x * 25**7 + 2 * 25**6 + x * 25**5 + 3 * 25**4 + x * 25 **3 + 4 * 25**2 + x * 25**1 + 5
+    arr2 = 2 * 25**4 + x* 25**3 + 0 + 2 * 25** 1 + 4
+    arr3 = 1*25**4 + x*25**3 + 0 + 9 * 25**1 + 9
+    if (arr1 + arr2 + arr3) % 24 == 0:
+        print((arr1+arr2+arr3) // 24)''''''
+for a in range(101):
+    fl = True
+    for x in range(101):
+        for y in range(101):
+            if not((x<4) or (x>=20) or (y >= (3*x + a)) or (y < 100)):
+                fl = False
+    if fl:
+        print(a)''''''
+f = open('17var03.txt')
+a = [int(x) for x in f]
+kmaxi = -423423432423
+kmin = 2432743264326
+k=0
+for i in range(len(a)):
+    if abs(a[i]) % 100 == 90:
+        kmaxi = max(kmaxi, a[i])
+print(kmaxi)
+for i in range(len(a)-2):
+    if (((999<abs(a[i])<10000) + (999<abs(a[i+1])<10000) + (999<abs(a[i+2])<10000)) >= 1) and (a[i]+a[i+1]+a[i+2] > kmaxi):
+        k+=1
+        kmin = min(kmin, a[i]+a[i+1]+a[i+2])
+print(k,kmin)''''''
+def f(s1,s2,m):
+    if (s1+s2) <= 20: return m%2==0
+    if m==0: return 0
+    h = [f(s1+1,s2,m-1), f((s1+5)//2,s2,m-1), f(s1,s2-1,m-1), f(s1,(s2+1)//2,m-1)]
+    return any(h) if (m-1)%2==0 else all(h)
+
+print('1)', [s2 for s2 in range(11,100) if f(10,s2,2)])
+print('2)', [s2 for s2 in range(11,100) if not f(10,s2,1) and f(10,s2,3)])
+print('3)', [s2 for s2 in range(11,100) if (f(10,s2,2) or f(10,s2,4)) and not f(10,s2, 2)])''''''
+def f(s,m):
+    if s>=205: return m%2==0
+    if m==0: return 0
+    if s<205:
+        h=[f(s+1,m-1),f(s+5,m-1), f(s*4,m-1)]
+    return any (h) if (m-1)%2 == 0 else all(h)
+
+print('19)', [s for s in range(1,205) if f(s,2)])
+print('20)', [s for s in range(1,205) if not f(s,1) and f(s,3)])
+print('21)', [s for s in range(1,205) if not f(s,2) and f(s,4)])''''''
+def f(st,fn,k):
+    if fn == st: return 1
+    if st == 6 or st == 17: return 0
+    if st > fn: return 0
+    return f(st+2,fn,k) + f(st+3,fn,k) + f(st*5,fn,k) 
+print(f(1,31,0))''''''
+f = open('17var03.txt')
+a = [int(x) for x in f]
+kmaxi = -423423432423
+kmin = 2432743264326
+k=0
+for i in range(len(a)):
+    if abs(a[i]) % 100 == 90:
+        kmaxi = max(kmaxi, a[i])
+print(kmaxi)
+for i in range(len(a)-2):
+    if (((999<abs(a[i])<10000) + (999<abs(a[i+1])<10000) + (999<abs(a[i+2])<10000)) >= 1) and (a[i]+a[i+1]+a[i+2] > kmaxi):
+        k+=1
+        kmin = min(kmin, a[i]+a[i+1]+a[i+2])
+print(k,kmin)''''''
+from fnmatch import *
+mask='54?1?3*7'
+for x in range(5387910,10**10+1,18579):
+    if fnmatch(str(x),mask):
+        print(x,x//18579)''''''
+f = open('17-1.txt')
+a = [int(x) for x in f]
+b = []
+kmin = 45834478453487
+for i in range(len(a)-2):
+    if a[i]<a[i+1]>a[i+2]:
+        b.append(i)
+print(b)
+for i in range(len(b)):
+    kmin = min(kmin,b[i]-b[i-1])
+    
+print(len(b),kmin)''''''
+f = open('17-1.txt')
+a = [int(x) for x in f]
+b = []
+kmin = 45834478453487
+for i in range(1,len(a)-1):
+    if a[i-1]<a[i]>a[i+1]:
+        b.append(i)
+print(b)
+for i in range(1,len(b)):
+    kmin = min(kmin,b[i]-b[i-1])
+    
+print(len(b),kmin)  ''''''
+f = open('17-2.txt')
+a = [int(x) for x in f]
+kmin = 483757645674
+b = []
+for i in range(len(a)):
+    kmin = min(kmin,a[i])
+    if a[i] == kmin:
+        b.append(i+1)
+   
+print(a.count(kmin), max(b))''''''
+f = open('17-8.txt')
+a = [int(x) for x in f]
+kmax = -21478237823553
+k=0
+for i in range(len(a)-1):
+    if ((bin(a[i]).count('1')>5) and (bin(a[i]).count('1')%2!=0)) + ((bin(a[i+1]).count('1')>5) and (bin(a[i+1]).count('1')%2!=0))!=0:
+        k+=1
+        kmax = max(kmax,a[i]+a[i+1])
+print(k,kmax)''''''
+f =open('17-1.txt')
+a = [int(x) for x in f]
+kmax = -4237857635763
+k=0
+for i in range(len(a)-1):
+    if (a[i] % 9 == 0 and oct(a[i+1])[-1] == '3') + (a[i+1] % 9 == 0 and oct(a[i])[-1] == '3') == 1:
+        k+=1
+        kmax = max(kmax,a[i],a[i+1])
+print(k,kmax)''''''
+f = open('17-1.txt')
+a = [int(x) for x in f]
+b=[]
+kmax = -4357834576345
+k=0
+for i in range(1, len(a)-1):
+    if a[i-1]>a[i]<a[i+1]:
+        k+=1
+        b.append(a[i])
+print(k,max(b))''''''
+f = open('17-339 (2).txt')
+a = [int(x) for x in f]
+k = 0
+kmin = 37573454375435
+kmax = -4563476543657
+for i in range(len(a)):
+    if a[i]>0 and a[i] % 19 == 0:
+        kmin = min(kmin, a[i])
+print(kmin)
+for i in range(len(a)-1):
+    if (a[i] + a[i+1]) < kmin:
+        k+=1
+        kmax = max(kmax, a[i] + a[i+1])
+print(k,kmax)''''''
+f = open('17-403.txt')
+a = [int(x) for x in f]
+k = 0
+kmin = 378782347623
+kmin1 =5343453454435
+for i in range(len(a)):
+    kmin = min(kmin,a[i])
+print(kmin)
+for i in range(len(a)-1):
+    if ((a[i] % 77) * (a[i+1] % 77)) == kmin**2:
+        k+=1
+        kmin1 = min(kmin1, a[i]*a[i+1])
+print(k,kmin1)''''''
+def fn(n):
+    n = str(n)
+    for i in range(len(n)):
+        if n[i] != '0':
+            if int(n) // int(n[i]) == 197:
+                return True
+    return False
+
+f = open('17-298.txt')
+a = [int(x) for x in f]
+k = 0
+kmax = -4578348534
+kmax1= -45787834857934
+for i in range(len(a)):
+    if a[i] % 197 == 0:
+        kmax = max(kmax,a[i])
+print(kmax)
+for i in range(len(a)-1):
+    if (fn(a[i]) + fn(a[i+1]) == 1) and (a[i] + a[i+1]) < kmax:
+        k+=1
+        kmax1 = max(kmax1, a[i] + a[i+1])
+print(k,kmax1)''''''
+
+f = open('17-379 (1).txt')
+a = [int(x) for x in f]
+k = 0
+kmax = -45673465734534
+kmax1 = -43578347534
+for i in range(len(a)):
+    if a[i] % 100 == 15:
+        kmax = max(kmax,a[i])
+print(kmax)
+for i in range(len(a)-2):
+    if (((999<a[i]<10000) + (999<a[i+1]<10000) +(999<a[i+2]<10000)) == 1) and (a[i] + a[i+1] + a[i+2]) >= kmax:
+        k+=1
+        kmax1 = max(kmax1, a[i] + a[i+1] + a[i+2])
+print(k,kmax1) ''''''
+
+f = open('17-408.txt')
+a = [int(x) for x in f]
+k = 0
+kmax = -43758347857843
+kmax1 =-2478534675346
+for i in range(len(a)):
+    if (99<a[i]<1000) and (a[i] % 10 ==3):
+        kmax = max(kmax,a[i])
+print(kmax)
+for i in range(len(a)-2):
+    fl1 = (abs(a[i]) % 10 == 3) and (99<abs(a[i])<1000)
+    fl2 = (abs(a[i+1]) % 10 == 3) and (99<abs(a[i+1])<1000)
+    fl3 = (abs(a[i+2]) % 10 == 3) and (99<abs(a[i+2])<1000)
+    if fl1 + fl2 + fl3 > 0 and a[i]+ a[i+1] + a[i+2] < kmax:
+        k+=1
+        kmax1 = max(kmax1, a[i]+ a[i+1] + a[i+2])
+print(k, kmax1)''''''
+
+print('x y z w')
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            for w in range(2):
+                if ((x <= y) and (z == (w<=x)) and (not(w))):
+                    print(x,y,z,w)''''''
+for i in range(1,100):
+    n = bin(i)[2:]
+    if i % 2 == 0:
+        n = n.replace('1','11')
+    else:
+        n = n.replace('0','00')
+    if int(n,2) > 70:
+        print(i,int(n,2))''''''
+from turtle import *
+lt(90)
+speed(10)
+k=10
+tracer(10)
+for i in range(5):
+    fd(30*k)
+    rt(90)
+    fd(40*k)
+    rt(90)
+up()
+fd(20*k)
+rt(90)
+fd(5*k)
+rt(90)
+down()
+for i in range(7):
+    fd(10*k)
+    rt(90)
+up()
+for x in range(0,50):
+    for y in range(0,50):
+        goto(x*k,y*k)
+        dot(3.5,'red')''''''
+from itertools import *
+alp = '012345'
+k=0
+for i in product(alp, repeat = 6):
+    if i.count('0') == 1 and i[0] != '0':
+        x = ''.join(i)
+        x = x.replace('1','8').replace('3','8').replace('5','8')
+        if x.count('80') == 0 and  x.count('08') == 0:
+            k+=1
+print(k)''''''
+n = 2024 * '1'
+while '11111' in n or '222' in n:
+    if '11111' in n:
+        n = n.replace('11111','22',1)
+    else:
+        n = n.replace('222','2',1)
+print(n)''''''
+from ipaddress import *
+k=0
+net = ip_network('204.16.168.0/255.255.248.0',0)
+for add in net:
+    if bin(int(add)).count('1') % 5 != 0:
+        k+=1
+print(k)''''''
+def f(n):
+    s = ''
+    while n !=0:
+        s+=str(n%9)
+        n = n//9
+    s=(s[::-1])
+    return int(s)
+
+
+x1 = 9**2025 + 9**1000
+
+for i in range(1, 5769):
+    if str(f(x1-f(i))).count('0') == 1026:
+        print(i)''''''
+fl = True
+for a in range(99,1000):
+    for x in range(1,1000):
+        if not(((x % 9 == 0) <= (not(x % 6 == 0))) or (x + a >= 100)):
+            fl = False
+    if fl == True:
+        print(a)
+        break''''''
+f = open('17var011.txt')
+a = [int(x) for x in f]
+k = 0
+kmin = 457374857435
+kmax= -45782378942376
+for i in range(len(a)):
+    kmin = min(kmin,a[i])
+print(kmin)
+for i in range(len(a)-1):
+    if ((a[i] % 27 == kmin) + (a[i+1] % 27 == kmin)) > 0:
+        k+=1
+        kmax = max(kmax,a[i]+a[i+1])
+print(k,kmax)''''''
+def f(n):
+    s = ''
+    while n !=0:
+        s+=str(n%9)
+        n = n//9
+    s=(s[::-1])
+    return int(s)
+
+
+x1 = 9**2025 + 9**1000
+
+for x in range(5769, 1,-1):
+    if str(f(x1-x)).count('0') == 1026:
+        print(x)
+        break''''''
+def f(st,fn):
+    if st == fn: return 1
+    if st < fn: return 0
+    return f(st-2,fn) + f(st//2,fn)
+print(f(50,11)*f(11,2))''''''
+def f(s,m):
+    if s<=31: return m%2==0
+    if m==0: return 0
+    if s>=32:
+        h=[f(s-2,m-1),f(s-5,m-1), f(s//3,m-1)]
+    return any (h) if (m-1)%2 == 0 else all(h)
+
+print('19)', [s for s in range(200,1,-1) if f(s,2)])
+print('20)', [s for s in range(200,1,-1) if not f(s,1) and f(s,3)])
+def f(s1,s2,m):
+    if (s1+s2) >= 99: return m % 2 ==0
+    if m == 0: return 0
+    h = [f(s1+1,s2,m-1), f(s1*3,s2,m-1), f(s1,s2+1,m-1), f(s1,s2*3,m-1)]
+    return any(h) if (m-1)%2 == 0 else all(h)
+print('1', [s2 for s2 in range(1,90) if f(8,s2,2)])
+print('2', [s2 for s2 in range(1,90) if not f(8,s2,1) and f(8,s2,3)])
+print('3', [s2 for s2 in range(1,90) if f(8,s2,2)])''''''
+def fn(n):
+    if n % 2 !=0:
+        return n//2+1
+    else:
+        return n // 2
+
+def f(s1,s2,m):
+    if (s1+s2) <= 32: return m%2==0
+    if m==0: return 0
+    h = [f(s1-1,s2,m-1), f(fn(s1),s2,m-1), f(s1,s2-1,m-1), f(s1,fn(s2),m-1)]
+    return any(h) if (m-1)%2==0 else all(h)
+print('1)', [s2 for s2 in range(23,100) if f(10,s2,2)])
+print('2)', [s2 for s2 in range(23,100) if not f(10,s2,1) and f(10,s2,3)])
+print('3)', [s2 for s2 in range(23,100) if f(10,s2,4) and not f(10,s2, 2)])
+''''''
+def f(s1,s2,m):
+    if (s1+s2) >= 99: return m % 2 ==0
+    if m == 0: return 0
+    h = [f(s1+1,s2,m-1), f(s1*3,s2,m-1), f(s1,s2+1,m-1), f(s1,s2*3,m-1)]
+    return any(h) if (m-1)%2 == 0 else all(h)
+#print('1', [s2 for s2 in range(1,90) if f(8,s2,2)])
+#print('2', [s2 for s2 in range(1,90) if not f(8,s2,1) and f(8,s2,3)])
+print('3', [s2 for s2 in range(1,90) if f(8,s2,2)])''''''
+def f(s,m):
+    if s>=25: return m%2==0
+    if m==0: return 0
+    if s<25:
+        h=[f(s+2,m-1),f(s*2,m-1)]
+    return any (h) if (m-1)%2 == 0 else all(h)
+
+print('19)', [s for s in range(1,25) if f(s,2)])
+print('20)', [s for s in range(1,25) if not f(s,1) and f(s,3)])
+print('21)', [s for s in range(1,25) if not f(s,2) and f(s,4)])''''''
+def f(s1,s2,m):
+    if s1+s2 >=69: return m%2==0
+    if m == 0: return 0
+    h = [f(s1+2,s2,m-1), f(s1*2,s2,m-1), f(s1,s2+2,m-1), f(s1,s2*2,m-1)]
+    return any(h) if (m-1)%2 ==0 else all(h)
+print('19', [s2 for s2 in range(1,64) if f(5,s2,2)])
+print('19', [s2 for s2 in range(1,64) if not f(5,s2,1) and f(5,s2,3)])
+print('19', [s2 for s2 in range(1,64) if not f(5,s2,2) and f(5,s2,4)])''''''
+
+def f(s1,s2,s3,m):
+    if (s1+s2+s3) >= 73: return m % 2 ==0
+    if m == 0: return 0
+    h = [f(s1+3,s2,s3,m-1), f(s1,s2+3,s3,m-1), f(s1,s2,s3+3, m-1), f(s1+13,s2,s3, m-1),f(s1,s2+13,s3, m-1),f(s1,s2,s3+13, m-1),f(s1+23,s2,s3, m-1),f(s1,s2+23,s3, m-1),f(s1,s2,s3+23, m-1)]
+    return any(h) if (m-1)%2 == 0 else all(h)
+print('1', [s3 for s3 in range(1,23) if f(2,s3,s3*2,2)])
+print('2', [s3 for s3 in range(1,23) if not f(2,s3,s3*2,1) and f(2,s3,s3*2,3)])
+print('3', [s3 for s3 in range(1,23) if not f(2,s3,s3*2,2) and f(2,s3,s3*2,4)])
+''''''
+def f(s,m):
+    if 36<=s<=60: return m%2==0
+    if s>60: return (m+1)%2==0
+    if m==0: return 0
+    if s<36:
+        h=[f(s+1,m-1),f(s*2,m-1),f(s*3,m-1)]
+    return any(h) if (m-1)%2 == 0 else all(h)
+
+print('19)', [s for s in range(1,36) if f(s,2)])
+print('20)', [s for s in range(1,36) if not f(s,1) and f(s,3)])
+print('21)', [s for s in range(1,36) if not f(s,2) and f(s,4)])
+''''''
+f = open('24-2.txt')
+k=0
+for s in f:
+    if s.count('A') > s.count('E'):
+        k+=1
+print(k)''''''
+f = open('24-3.txt')
+arr = [x for x in f]
+a = [0] * 100
+for i in range(len(arr)):
+    if arr[i] == 'A':
+        a[ord(i+1)] +=1
+print(a)
+''''''
+f = open('24-4.txt')
+a =[0]*100
+s=f.readline()
+for i in range(len(s)-2):
+    if s[i] == s[i+2]:
+        a[ord(s[i+1])] +=1
+k=a.index(max(a))
+print(chr(k))
+''''''
+# 4:D
+from collections import Counter
+f = open('24-5.txt')
+s = f.readlines()
+gcount = 43564364554
+a = [0]* 100
+for i in range(len(s)):
+    gcount = min(s[i].count('G'),gcount)
+print(gcount)
+for i in range(len(s)):
+    if s[i].count('G') == gcount:
+        print(Counter(s[i]))
+        break
+''''''
+from collections import Counter
+f = open('24-5.txt')
+s = f.readlines()
+m = Counter(s[0])
+print(m)''''''
+from collections import Counter
+f = open('24-5.txt')
+s = f.readlines()
+gcount = 43564364554
+a = [0]* 100
+for i in range(len(s)):
+    gcount = min(s[i].count('G'),gcount)
+print(gcount)
+for i in range(len(s)):
+    if s[i].count('G') == gcount:
+        print(Counter(s[i]))
+        break''''''
+# 5:T
+f = open('24-6.txt')
+s = f.readlines()
+m = -4578347857
+for i in range(len(s)):
+    if s[i].count('A') < 25:
+        m = max(rfind())''''''
+
+from collections import Counter
+f = open('24-5.txt')
+s = f.readlines()
+gcount = 43564364554
+a = [0]* 100
+for i in range(len(s)):
+    gcount = min(s[i].count('G'),gcount)
+print(gcount)
+for i in range(len(s)):
+    if s[i].count('G') == gcount:
+        print(Counter(s[i]))
+        break''''''
+f = open('24-6.txt')
+s = f.readlines()
+l = -4578347857
+for i in range(len(s)):
+    if s[i].count('A') < 25:
+        for m in range(ord('A'), ord('Z')+1):
+            l = max(s[i].rfind(chr(m)) - s[i].find(chr(m)), l)
+print(l)'''
+#1004
+'''
+f = open('24-7.txt')
+s = f.readline()
+k = 1
+count = 0
+for i in range(len(s)-1):
+    if s[i] == 'P' and s[i+1] == 'P':
+        k=1
+    else:
+        k+=1
+        count = max(k,count)
+        
+print(count)
+'''
+#188
+'''
+f = open('24-8.txt')
+s = f.readline()
+s = s.split('A')
+k=0
+for i in range(len(s)-1):
+    k = max(len(s[i] + 'A' + s[i+1]), k)
 print(k)'''
+# 337
+f = open('24Demo.txt')
+s = f.readline()
+k=0
+kmax=0
+s = s.replace('A', 'I')
+s = s.replace('O', 'I')
+s = s.replace('C', 'M')
+s = s.replace('D', 'M')
+s = s.replace('F', 'M')
+
+s = s.replace('MI', '1')
+for i in range(len(s)-1):
+    if s[i] == s[i-1]:
+        k+=1
+        kmax = max(k,kmax)
+    else:
+        k=1
+print(kmax)
+    
+    
+        
+    
+
+    
+
+
+    
+    
+
+    
+
+    
+    
+        
